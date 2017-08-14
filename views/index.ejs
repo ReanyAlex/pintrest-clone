@@ -1,0 +1,37 @@
+<% include ./partials/header %>
+
+
+    <div class="title">
+      <h1>Pintrest Clone<h1>
+    </div>
+    <div class="container">
+      <% pins.forEach(function(pin){ %>
+
+        <div class="box row-3">
+          <h2><%= pin.name %></h2>
+          <a href="<%= pin.website ? pin.website : '#' %>" target="<%= pin.website ? '_blank' : '' %>"  >
+            <img src="<%= pin.imgLink %>" alt="">
+          </a>
+          <h4><%= pin.description %></h4>
+          <a href="/show/<%= pin.author.id %>">
+            <p><%= pin.author.username %></p>
+          </a>
+          <% console.log("user",user.id) %>
+          <% console.log(pin.author.id) %>
+          <% if(user.id == pin.author.id){ %>
+          <form id="delete-form"action="/delete/<%= pin._id%>?_method=DELETE" method="POST">
+            <button class="btn btn-danger">Delete</button>
+          </form>
+          <% } %>
+        </div>
+
+      <% }) %>
+
+    </div>
+
+
+
+
+
+
+<% include ./partials/footer %>

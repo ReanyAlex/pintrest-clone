@@ -1,0 +1,32 @@
+<% include ./partials/header %>
+
+
+    <div class="title">
+      <h1><%= pins[0].author.username %>'s Pins<h1>
+    </div>
+    <div class="container">
+      <% pins.forEach(function(pin){ %>
+
+        <div class="box row-3">
+          <h2><%= pin.name %></h2>
+          <a href="<%= pin.website ? pin.website : '#' %>" target="<%= pin.website ? '_blank' : '' %>"  >
+            <img src="<%= pin.imgLink %>" alt="">
+          </a>
+          <h4><%= pin.description %></h4>
+          <p><%= pin.author.username %></p>
+          <form id="delete-form"action="/delete/<%= pin._id%>?_method=DELETE" method="POST">
+            <button class="btn btn-danger">Delete</button>
+          </form>
+        </div>
+
+      <% }) %>
+
+    </div>
+
+
+<script type="text/javascript">
+// $("img").error(function () {
+//   $(this).unbind("error").attr("src", "images/not_found.gif");
+// });
+</script>
+<% include ./partials/footer %>

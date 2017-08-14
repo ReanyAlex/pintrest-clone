@@ -1,0 +1,84 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  background: gray;
+  color: white;
+}
+
+.ui.inverted.menu{
+  background: red;
+  border-bottom: 1px solid black;
+}
+
+.item{
+  border-left: 1px solid black;
+}
+
+img{
+  height: 40%;
+  /*width: 80%;*/
+}
+
+/*input{
+   color: black;
+}
+
+button{
+  color: black;
+}*/
+
+.title{
+  background: red;
+  color: white;
+  margin-top: 180px;
+  width: 87%;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding-top: 25px;
+  height: 75px;
+  font-size: 6rem;
+  padding-left: 30px;
+}
+
+
+.box{
+  background: white;
+  color: black;
+  height: 350px;
+  display: inline-block;
+  border: 5px gray solid;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.container{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.row{
+
+}
+
+.row-1{
+  width:0.833%;
+  float: left;
+}
+
+.row-2{
+  width:16.66%;
+  float: left;
+}
+
+.row-3{
+  width:25%;
+  float: left;
+}
+
+.row-4{
+  width:33.33%;
+  float: left;
+}
