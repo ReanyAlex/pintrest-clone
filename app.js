@@ -35,7 +35,7 @@ function generateOrFindUser(accessToken, refreshToken, profile, done){
 passport.use(new TwitterStrategy({
   consumerKey: process.env.TWITTER_CONSUMER_KEY,
   consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
-  callbackURL: "http://localhost:3000/auth/twitter/return"
+  callbackURL: "https://blooming-tor-66348.herokuapp.com/auth/twitter/return"
 }, generateOrFindUser));
 
 //==========================================
@@ -61,7 +61,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride("_method"))
 // mongodb connection
-mongoose.connect("mongodb://localhost:27017/pintrest");
+mongoose.connect(process.env.DATABASEURL);
 var db = mongoose.connection;
 
 // Session Configuration for Passport and MongoDB
