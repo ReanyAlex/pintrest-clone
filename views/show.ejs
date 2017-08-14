@@ -5,6 +5,7 @@
       <h1><%= pins[0].author.username %>'s Pins<h1>
     </div>
     <div class="container">
+      <% if(pins.length === 0){ %>
       <% pins.forEach(function(pin){ %>
 
         <div class="box row-3">
@@ -20,6 +21,7 @@
         </div>
 
       <% }) %>
+      <% } %>
 
     </div>
 
